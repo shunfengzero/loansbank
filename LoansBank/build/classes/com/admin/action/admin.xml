@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    
+    <struts>
+ 		<package name="admin" extends="json-default">
+			<action name="sign" class="com.admin.action.AdminAction" method="addAdminator">
+				<result type="json"></result>
+			</action>
+
+			<action name="*_*" class="com.admin.action.FindUsersAction" method="{1}{2}">
+				<result type="json"></result>
+			</action>
+			
+			<action name="login" class="com.admin.action.AdminAction" method="login">
+				<result type="json"></result>
+			</action>
+			
+			<!-- 贷款 -->
+			 <action name="findUsersApply" class="com.admin.action.FindLoanUsersAction" method="findUsers">
+				<result type="json"></result>
+			</action>
+			<action name="editorUserApply" class="com.admin.action.FindLoanUsersAction" method="editorUser">
+				<result type="json"></result>
+			</action>
+			<action name="deleteUserApply" class="com.admin.action.FindLoanUsersAction" method="deleteUser">
+				<result type="json"></result>
+			</action>
+			<action name="findApplyUsersApply" class="com.admin.action.FindLoanUsersAction" method="findApplyUsers">
+				<result type="json"></result>
+			</action>
+			
+			<!-- 投资 -->
+			 <action name="findUsersInvest" class="com.admin.action.FindInvestUsersAction" method="findUsers">
+				<result type="json"></result>
+			</action>
+			<action name="editorUserInvest" class="com.admin.action.FindInvestUsersAction" method="editorUser">
+				<result type="json"></result>
+			</action>
+			<action name="deleteUserInvest" class="com.admin.action.FindInvestUsersAction" method="deleteUser">
+				<result type="json"></result>
+			</action>
+			<action name="findApplyUsersInvest" class="com.admin.action.FindInvestUsersAction" method="findApplyUsers">
+				<result type="json"></result>
+			</action>
+
+			<!-- 退出 -->
+			<action name="adminlogout" class="com.admin.action.AdminAction" method="logout">
+				<result type="json"></result>
+			</action>
+			
+ 
+		</package>
+		
+    </struts>

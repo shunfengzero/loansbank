@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+   
+ <hibernate-mapping package="com.loans.entity">
+ 	<class name="Users" table="user">
+ 		<id name="id">
+ 			<generator class="native"></generator>
+ 		</id>
+ 		
+ 		<property name="userName" ></property>
+ 		<property name="passWord"></property>
+ 		<property name="realName"></property>
+ 		<property name="gender"></property>
+ 		<property name="email"></property>
+ 		<property name="telePhone"></property>
+ 		<property name="address"></property>
+ 		<property name="introduce"></property>
+ 		<!-- <property name="activeCode"></property>
+ 		<property name="state"></property> -->
+ 		<!--<property name="role"></property> -->
+ 		<property name="registTime"></property>
+ 		 
+		<property name="idType"></property>
+		<property name="idNumber"></property>
+		<property name="idImg"></property>
+		<property name="addressWork"></property>
+		<property name="bankType"></property>
+		<property name="bankNumber"></property>
+		<property name="accountBalance"></property>
+ 	</class>
+ 	
+ 	
+ 	<class name="Apply" table="apply">
+ 		<id name="id">
+ 			<generator class="native"></generator>
+ 		</id>
+ 		
+ 		<property name="userName" ></property>
+ 		<property name="realName" ></property>
+ 		<property name="limitMoney"></property>
+ 		<property name="clazz"></property>
+ 		<property name="limitTime"></property>
+ 		<property name="phone"></property>
+ 		<property name="address"></property>
+ 		<property name="status"></property>
+ 		<property name="applyTime"></property>
+
+ 	</class>
+ 	
+ 	<class name="Invest" table="invest">
+ 		<id name="id">
+ 			<generator class="native"></generator>
+ 		</id>
+ 		
+ 		<property name="userName" ></property>
+ 		<property name="iMoney"></property>
+ 		<property name="investTime"></property>
+ 		<property name="investDate"></property>
+ 		<property name="investMethod"></property>
+ 		<property name="withDrawMethod"></property>
+ 		<property name="investstatus"></property>
+ 		
+
+ 	</class>
+ 	
+ 
+ </hibernate-mapping>  

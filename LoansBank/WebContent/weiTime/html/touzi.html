@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>微时贷</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="shortcut icon" href="../img/title.png" />
+		<link rel="stylesheet" href="../css/touzi.css" />
+		
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/jquery.validate.min.js"></script>
+		<script src="../js/loginandregister.js"></script>
+		<script src="../js/index.js"></script>
+		<script src="../js/loginandregister.js"></script>
+		<script src="../js/index.js"></script>		
+		<script src="../js/comman.js"></script>
+		<script src="../js/lunbo.js"></script>
+		<script src="../js/animate.js"></script>
+		<script src="../js/comman.js"></script>
+	</head>
+	<body>
+<!---------------------------nav------------------------->		
+		<div id="nav_wrap">
+			<nav>
+				<div class="logo"><img src="../img/logo1.jpg"/></div>
+	 			<ul>
+					<li><a href="index.jsp" >首页</a></li>
+					<li><a href="touzi.html" class="nav_active">我要投资</a></li>
+					<li><a href="jiekuan.html">我要借款</a></li>
+					<li><a href="center.html">个人中心</a></li>
+					<li><a href="about us.html">关于我们</a></li>
+				</ul>
+				
+				<!-- 登录注册按钮DIV -->
+				<div class="nav-right">
+				
+				</div>
+				
+			</nav>
+		</div>
+		
+		
+		<!---------------------------nav_login------------------------->
+		<div id="nav_mask">
+
+		</div>
+		
+		<div id="nav_mask_login">
+	
+		</div>
+		
+		
+<!---------------------------section------------------------->		
+		<div id="touzi_sec">
+			<div id="touzi_sec_s1_wrap">
+				<div id="touzi_sec_s1">
+					<div class="touzi_sec_s1_left">
+						<img src="../img/touzi_pic1.jpg" />
+						<p class="touzi_sec_s1_left_p1">投资理财上微时贷</p>
+						<input type="button" value="新手专享" class="touzi_sec_s1_left_btn" />
+						<p class="touzi_sec_s1_left_p2"><span>20%</span>预期年收益</p>
+						<p class="touzi_sec_s1_left_p3">各种投资项目分类</p>
+						<p class="touzi_sec_s1_left_p3">总有一款适合您</p>
+						<a href="javaScript:;" class="touzi_sec_s1_left_a">点击查看更多</a>
+					</div>
+					
+					<div class="touzi_sec_s1_right">
+						<div class="touzi_sec_s1_right_1">
+							<img src="../img/touzi_pic2.jpg" />
+							<p class="touzi_sec_s1_right_1_p1">预期年收益</p>
+							<p class="touzi_sec_s1_right_1_p2">20%</p>
+							<p class="touzi_sec_s1_right_1_p3">起投期限10天</p>
+							<input type="button" value="马上投资" class="touzi_sec_s1_right_1_btn"/>
+						</div>
+						<div class="touzi_sec_s1_right_2">
+							<img src="../img/touzi_pic3.jpg" />
+							<p class="touzi_sec_s1_right_2_p1">预期年收益</p>
+							<p class="touzi_sec_s1_right_2_p2">10%</p>
+							<p class="touzi_sec_s1_right_2_p3">起投期限15天</p>
+							<input type="button" value="马上投资" class="touzi_sec_s1_right_2_btn"/>
+						</div>
+						<div class="touzi_sec_s1_right_3">
+							<img src="../img/touzi_pic4.jpg" />
+							<p class="touzi_sec_s1_right_3_p1">预期年收益</p>
+							<p class="touzi_sec_s1_right_3_p2">15%</p>
+							<p class="touzi_sec_s1_right_3_p3">起投期限30天</p>
+							<input type="button" value="马上投资" class="touzi_sec_s1_right_3_btn"/>
+						</div>
+						<div class="touzi_sec_s1_right_4">
+							<img src="../img/touzi_pic5.jpg" />
+							<p class="touzi_sec_s1_right_4_p1">预期年收益</p>
+							<p class="touzi_sec_s1_right_4_p2">25%</p>
+							<p class="touzi_sec_s1_right_4_p3">起投期限60天</p>
+							<input type="button" value="马上投资" class="touzi_sec_s1_right_4_btn"/>
+						</div>
+						
+					</div>
+				</div>
+				<div id="touzi_mask">
+					<form id="investForm" onsubmit="return false;">
+						<img src="../img/enroll_close.png" class="enroll_close"/>
+						<h2></h2>
+						<p>投资金额<input id="iMoney" type="text" name="iMoney">元</p>
+						<p>投资时长<input id="investTime" type="text" name="investTime">天</p>
+						<!-- <p>预估盈利<input id="iearn" type="text" name="iearn">元</p> -->
+						<p class="touzi_mask_p4">投资方式
+							<input id="bankcard" type="radio" name="investMethod" value="银行卡" class="touzi_mask_p4_input1">银行卡
+							<input id="creditcard"  type="radio" name="investMethod" value="信用卡">信用卡
+							<input id="alipay" type="radio" name="investMethod" value="支付宝">支付宝
+						</p>
+						<p class="touzi_mask_p4">提现方式
+							<input id="withdrawalByMonth" type="radio" name="withDrawMethod" class="touzi_mask_p4_input1" value="按月提现">按月提现
+							<input id="withdrawaByExpire" type="radio" name="withDrawMethod" value="满期提现">满期提现
+						</p>
+						<p><input type="submit" value="确认投资" class="touzi_mask_btn" onclick="invest()"></p>
+						<p class="touzi_mask_p6">我已阅读并同意<a href="javaScript:;">《微时贷服务协议》</a></p>
+					</form>
+				</div>
+			</div>
+			
+			
+			<div id="touzi_sec_s2_wrap">
+				<div id="touzi_sec_s2">
+					
+					<div class="touzi_sec_s2_left">
+						<p>投资额度<input id="t1" type="text" class="touzi_sec_s2_left_p1" value=""></p>
+						<p>投资时长<input id="t2" type="text" class="touzi_sec_s2_left_p2" value=""></p>
+						<p>每月利润<input id="t3" type="text" class="touzi_sec_s2_left_p3" value=""></p>
+						<p class="touzi_sec_s2_left_p4">
+							<input type="button" value="重置" class="touzi_sec_s2_left_btn1" onclick="count2()">
+							<input type="button" value="计算" class="touzi_sec_s2_left_btn2" onclick="count()">
+						</p>
+					</div>
+					
+					<div class="touzi_sec_s2_right">
+						<img src="../img/touzi_pic6.jpg" />
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+		
+<!---------------------------footer------------------------->		
+		<div id="footer_bg">
+			<div id="bottom-wrap">
+				<div class="bottom">
+					<h2>关注我们</h2>
+					<p>
+						<a href="#" class="bottom_p1"><img src="../img/bottom1.jpg"/></a>
+						<a href="#"><img src="../img/bottom2.png"/></a>
+					</p>
+				</div>
+			</div>
+			
+			<div id="footer-wrap">
+			
+				<footer>
+					<div class="f1">
+						<p>郑州市金水区</p>
+						<p>13689098767</p>
+					</div>
+					
+					<div class="f1">
+						<p>3C认证</p>
+						<p>大平台实力保证</p>
+					</div>
+					
+					<div class="f1">
+						<p>备案号：豫ICP备15043749号-1</p>
+						<p>2017微时贷人人行科技股份有限公司</p>
+					</div>
+					
+				</footer>
+				
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			function count() {
+				
+				
+				var t1 = $("#t1").val();
+				var t2 = $("#t2").val();
+				
+				var t3;
+				var newt1 = Number(t1);
+				var newt2 = Number(t2);
+				t3 = 0.02 / 365 * newt2 + newt1 / 100 * newt2 / 10;
+				/* t3 =Number(t1) + Number(t2); */
+				$("#t3").val(t3);
+				
+			}
+			
+			function count2() {
+				
+				$("#t1").val("");
+				$("#t2").val("");
+				$("#t3").val("");
+	
+				
+			}
+		
+		
+			function invest() {
+				
+				
+				$.ajax({
+					
+					type:"post",
+					url:"invest.action",
+					data:$("#investForm").serialize(),
+					dataType:"json",
+					success:function(data){
+						
+						if (data.code == 0) {
+							alert(data.msg);
+						} else {
+							alert("投资申请已提交，请等待处理");
+							
+						}
+						
+					}
+				
+					
+				});
+				
+		
+			}
+		
+		</script>
+			
+	</body>
+</html>

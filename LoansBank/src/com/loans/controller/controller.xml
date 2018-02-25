@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    
+     <struts>
+    <package name="controller" extends="json-default">   	
+    	<!-- 登录  -->
+    	<action name="ulogin" class="com.loans.controller.LogAction" method="login">
+  			
+    	</action> 
+    	<!-- 注册 -->
+    	<action name="register" class="com.loans.controller.RegisterAction" method="register">
+  
+    	</action>
+    	<!-- 注销  -->
+    	<action name="logout" class="com.loans.controller.LogAction" method="logout">
+  
+    	</action>
+    	
+    	<!-- 判断用户是否登录 -->
+    	<action name="isLogin" class="com.loans.controller.LogAction" method="isLogin">
+  
+    	</action>
+    	
+    	<!-- 判断用户是否登录 -->
+    	<action name="loginUserInfo" class="com.loans.controller.LogAction" method="loginUserInfo">
+  
+    	</action>
+    	
+    	<!-- 贷款  -->
+    	<action name="apply" class="com.loans.controller.ApplyAction" method="apply">
+  
+    	</action>
+    	
+    	<!-- 投资 -->
+    	<action name="invest" class="com.loans.controller.InvestAction" method="invest">
+  
+    	</action>
+    	
+    	<!-- 上传 -->
+    	<action name="upload" class="com.loans.controller.UploadAction" method="upload">
+  
+    	</action>
+    	
+    	<!-- 完善个人信息 -->
+    	  <action name="perfact" class="com.loans.controller.PerfactAction" method="perfact">
+  
+    	</action>
+  
+ 		 <!-- 返回投资金钱 -->
+    	 <action name="investmoney" class="com.loans.controller.InvestAction" method="investMoney">
+  
+    	</action>
+    	
+    	 <!-- 我的银行卡 -->
+    	 <action name="myBankCard" class="com.loans.controller.UserController" method="myBankCard">
+  
+    	</action>
+    	 <!-- 发送短信 -->
+    	 <action name="getCode" class="com.loans.controller.UserController" method="getCode">
+  
+    	</action>
+    	  	    	 	
+    	 <!-- 修改密码 -->
+    	 <action name="updatePassword" class="com.loans.controller.UserController" method="updatePassword">
+  
+    	</action> 	
+    	
+    	 <!-- 充值 -->
+    	 <action name="recharge" class="com.loans.controller.UserController" method="recharge">
+  
+    	</action> 
+    	 <!-- 支付成功 -->
+    	<!--  <action name="back" class="com.loans.controller.UserController" method="back">
+  
+    	</action>
+    	 -->
+    	</package> 
+    </struts>
+    
+    
+    

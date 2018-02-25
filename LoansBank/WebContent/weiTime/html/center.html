@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>微时贷</title>
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="shortcut icon" href="../img/title.png" />
+		<link rel="stylesheet" href="../css/center.css" />
+		
+		<!-- <script src="../js/jquery-1.7.2.js"></script> -->
+		
+		<script src="../js/jquery-3.2.1.min.js"></script>
+		<script src="../js/jquery.validate.min.js"></script>
+		<script src="../js/ajaxfileupload.js"></script>
+		<!-- <script src="../js/jquery.form.js"></script> -->
+		<script src="../js/loginandregister.js"></script>
+		<script src="../js/index.js"></script>
+		<script src="../js/lunbo.js"></script>
+		<script src="../js/animate.js"></script>
+		<script src="../js/comman.js"></script>
+		<script src="../js/center.js"></script>
+	</head>
+	<body>
+	<div id="clear">
+		<div id="nav_wrap">
+			<nav>
+				<div class="logo"><img src="../img/logo1.jpg"/></div>
+	 			<ul>
+					<li><a href="index.jsp">首页</a></li>
+					<li><a href="touzi.html">我要投资</a></li>
+					<li><a href="jiekuan.html">我要借款</a></li>
+					<li><a href="center.html" class="nav_active">个人中心</a></li>
+					<li><a href="about us.html">关于我们</a></li>
+				</ul>
+				
+				<!-- 登录注册按钮DIV -->
+				<div class="nav-right">
+				
+				</div>
+			</nav>
+		</div>	
+		
+		<div id="center_sec_wrap">
+			<div id="center_sec">
+				<img src="../img/center_pic1.jpg" class="center_sec_img1"/>
+				<div class="center_sec_img1_xiaoxi">
+					<img src="../img/center_pic.jpg" />
+				</div>
+				
+				<img src="../img/center_pic2.jpg" class="center_sec_img2" />
+				
+				
+				<div class="center_sec_img3" ><img src="../img/center_pic4.jpg"/></div>
+				<p class="center_sec_p1"><span>实名认证</span></p>
+				<!-------------第一个div---------------->
+				<div class="center_sec_div center_sec_1">
+						<img src="../img/center_left.jpg" class="center_sec_div_1_left" />
+						<img src="../img/center_right.jpg" class="center_sec_div_1_right" />
+					<div class="center_sec_1_1">						
+						<h2>我的账单</h2>
+						<p class="center_sec_1_1_p1">
+							<span>本月待还</span>
+							<input type="button" id="waitMoney" class="center_sec_1_1_p1_btn1"/>
+						</p>
+						<p class="center_sec_1_p2">
+							<input type="button" class="center_sec_1_1_p2_btn1" value="账单明细" />
+							<input type="button" class="center_sec_1_1_p2_btn2" value="提前还款"/>
+						</p>
+					</div>
+					
+					<!-- 数据需要动态展示 -->
+					<div class="center_sec_1_2">
+						<p class="center_sec_1_2_p1"><span>已出账：</span><span  class="center_sec_1_2_p1_span">4000元</span></p>
+						<p class="center_sec_1_2_p1"><span>未出账：</span><span  class="center_sec_1_2_p1_span">1500元</span></p>
+						<p class="center_sec_1_2_p1"><span>已还款：</span><span id=""  class="center_sec_1_2_p1_span">1500元</span></p>
+						<p class="center_sec_1_2_p1"><span>待还款：</span><span   class="center_sec_1_2_p1_span">2500元</span></p>
+					</div>
+					
+					<!-- 需要动态拼接 -->
+					<div id="myCount" class="center_sec_1_3">
+						<!-- <p class="center_sec_1_3_p1"><span>2017.6.8</span><span>借款<strong>2000</strong>元</span></p>
+						<p class="center_sec_1_3_p1"><span>2017.7.8</span><span>借款<strong>2000</strong>元</span></p>
+						<p class="center_sec_1_3_p1"><span>2017.7.9</span><span>还款<strong>1500</strong>元</span></p>
+						<p class="center_sec_1_3_p1"><span>2017.8.9</span><span>待还<strong>2500</strong>元</span></p> -->
+					</div>
+					
+					<!-- 需要动态展示数据  
+						未完成功能！！！！
+					-->
+					<div class="center_sec_1_4">
+						<p class="center_sec_1_4_p1">提前还款金额<input type="text" class="center_sec_1_4_p1_ipt1">元</p>
+						<p class="center_sec_1_4_p2">剩余待还金额<input type="text" class="center_sec_1_4_p2_ipt2">元</p>
+					</div>
+					
+				</div>
+				<!-------------第2个div---------------->
+				<div class="center_sec_div center_sec_2">
+					<img src="../img/center_left.jpg" class="center_sec_div_2_left" />
+					<img src="../img/center_right.jpg" class="center_sec_div_2_right" />
+					<div class="center_sec_2_1">
+						<h2>我的额度</h2>
+						<p class="center_sec_2_1_p1">
+							<span>可用额度</span>
+							<span id="foruse" >5000元</span>
+						</p>
+						<p class="center_sec_2_1_p2">
+							<input type="button" class="center_sec_2_1_p2_btn1" value="查看已用" />
+							<input type="button" class="center_sec_2_1_p2_btn2" value="提升额度"/>
+						</p>
+					</div>
+					
+					<div class="center_sec_2_2">
+						<p class="center_sec_2_2_p1">已用<span onclick="use"></span>0元</p>
+						<p class="center_sec_2_2_p2">剩余<span onclick="surplus"></span>0元</p>
+					</div>
+					
+					<div class="center_sec_2_3">
+						<p class="center_sec_2_3_p1">提升额度请在APP页面操作~</p>
+						<img src="../img/qr.png" />
+					</div>
+					
+				</div>
+				<!-------------第3个div---------------->
+				<div class="center_sec_div center_sec_3">
+					<img src="../img/center_left.jpg" class="center_sec_div_3_left" />
+					<img src="../img/center_right.jpg" class="center_sec_div_3_right" />
+					<div class="center_sec_3_1">
+						<h2>我的投资</h2>
+						<p class="center_sec_3_1_p1">
+							<span>已经投资</span>
+							<input type="button" id="investMoney" class="center_sec_3_1_p1_btn1" value="0元"/>
+						</p>
+						<p class="center_sec_3_1_p2">
+							<input type="button" class="center_sec_3_1_p2_btn1" value="查看盈利" />
+							<input type="button" class="center_sec_3_1_p2_btn2" value="投资记录"/>
+						</p>
+					</div>
+					
+					<div class="center_sec_3_2">
+						<p class="center_sec_3_2_p1">您已盈利<input type="text" id="earnMoney" class="center_sec_3_2_p1_ipt1">元了，加油！</p>
+					</div>
+					<!-- 动态拼接 
+						盈利记录
+					-->
+					<div id="investHistory" class="center_sec_3_3">
+						<!-- <p class="center_sec_3_3_p1">您已盈利<input type="text" class="center_sec_3_3_p1_ipt1">元了，加油！</p> -->
+					</div>
+					
+				</div>
+				<!-------------第4个div---------------->
+				<div class="center_sec_div center_sec_4">
+					<img src="../img/center_left.jpg" class="center_sec_div_4_left" />
+					<img src="../img/center_right.jpg" class="center_sec_div_4_right" />
+					<div class="center_sec_4_1">
+						<h2>资金管理</h2>
+						<p class="center_sec_4_1_p1">
+							<input type="button" id="myBankCard" class="center_sec_4_1_p1_btn1" onclick="toBinDing()" value="我的银行卡"/>
+							<input type="button" class="center_sec_4_1_p1_btn2" value="修改密码"/>
+						</p>
+						<p class="center_sec_4_p2">
+							<input type="button" class="center_sec_4_1_p2_btn1" value="提现" />
+							<input id="recharge" type="button" class="center_sec_4_1_p2_btn2" value="充值" "/>
+						</p>
+					</div>
+					
+					<div class="center_sec_4_2">
+						<p id="bankCard" class="center_sec_4_2_p1">您还没有绑定银行卡哦~</p>	
+					</div>
+					
+					<div class="center_sec_4_3">
+					<form id="message1">
+						<p class="center_sec_4_3_p1"><span>电话号码</span><input id="tel1" name="telePhone" type="text" class="center_sec_4_3_p1_ipt1"></p>
+						<p class="center_sec_4_3_p2"><span>验证码</span><input id="userCode" name="userCode" type="text" class="center_sec_4_3_p2_ipt1"><input id="toGetCode" onclick="getCode()" type="button" class="center_sec_4_3_p2_btn" value="获取验证码"></p>
+						<p class="center_sec_4_3_p3"><span>新密码</span><input id="newPass" name="" type="text" class="center_sec_4_3_p3_ipt1"></p>
+						<p class="center_sec_4_3_p4"><input  type="button" value="确定" class="center_sec_4_3_p4_btn" onclick="confirmPass()"></p>
+					</form>
+					</div>
+					
+					<div class="center_sec_4_4">
+						<p class="center_sec_4_4_p1">提现<input class="center_sec_4_4_p1_ipt1" type="text">元至绑定银行卡</p>
+						<p class="center_sec_4_4_p2"><input class="center_sec_4_4_p2_btn" type="button" value="提现"></p>
+					</div>
+					
+					<div class="center_sec_4_5">
+					<form id="pM" onsubmit="return false;">
+						<p class="center_sec_4_5_p1">充值<input id="payMoney" name="payMoney" class="center_sec_4_5_p1_ipt1" type="text">元至微时贷</p>
+						
+						</form>
+						<p class="center_sec_4_5_p2"><input id="recharge" class="center_sec_4_5_p2_btn" type="button" value="充值" onclick="recharge()"></p>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="center_sec_img2_shezhi">
+				<div class="center_sec_img2_shezhi_1">
+					<img src="../img/center_pic3.jpeg" class="center_sec_img2_shezhi_1_img" />
+					<p class="center_sec_img2_shezhi_1_p1" id="nickName1"></p>
+					<p class="center_sec_img2_shezhi_1_p2" id="myPhone"></p>
+					<img src="../img/enroll_close.png"  class="center_sec_img2_shezhi_1_close"/>
+				</div>	
+				
+				<p class="center_sec_img2_shezhi_2"><span>我的昵称</span><span class="center_sec_img2_shezhi_2_span2" id="nickName2">少侠好武功<img src="../img/center_right1.jpg"></span></p>
+				<p class="center_sec_img2_shezhi_3"><span>实名认证</span><span class="center_sec_img2_shezhi_3_span2">立即认证<img src="../img/center_right1.jpg"></span></p>
+				<p class="center_sec_img2_shezhi_4"><span>授权管理</span><span><img src="../img/center_right1.jpg"></span></p>
+				<p class="center_sec_img2_shezhi_5"><span>登录密码</span><span><img src="../img/center_right1.jpg"></span></p>
+				<p class="center_sec_img2_shezhi_6"><span>关于微时贷</span><span><img src="../img/center_right1.jpg"></span></p>
+
+				<p class="center_sec_img2_shezhi_7" ><span onclick="logout()">退出登录</span></p>
+
+			</div>
+			
+			<div class="center_sec_img2_shezhi_renzheng">
+			<form id="perfact" method="post" >
+				<p class="center_sec_img2_shezhi_renzheng_p1"><span>用户姓名</span><input id="realName" type="text" class="center_sec_img2_shezhi_renzheng_p1_ipt" name="realName"></p>
+				<p class="center_sec_img2_shezhi_renzheng_p2"><span>证件类型</span>
+
+						<input type="radio" class="center_sec_img2_shezhi_renzheng_p2_ipt1" name="idType" value="身份证"/><strong>身份证</strong>
+						<input type="radio" class="center_sec_img2_shezhi_renzheng_p2_ipt2" name="idType" value="驾驶证"/><strong>驾驶证</strong>
+						<input type="radio" class="center_sec_img2_shezhi_renzheng_p2_ipt3" name="idType" value="护照"/><strong>护照</strong>
+
+				</p>
+				<p class="center_sec_img2_shezhi_renzheng_p3"><span>证件号码</span><input id="idNumber" name="idNumber" type="text" class="center_sec_img2_shezhi_renzheng_p3_ipt"></p>
+				<p class="center_sec_img2_shezhi_renzheng_p4"><span>电话号码</span><input id="telePhone" name="telePhone" type="text" class="center_sec_img2_shezhi_renzheng_p4_ipt"></p>
+				<p class="center_sec_img2_shezhi_renzheng_p5">
+					<span>证件照片</span>
+
+					<!-- <input type="file" id="file1" name="file" />
+					<input id="upd" type="button" class="center_sec_img2_shezhi_renzheng_p5_ipt2" value="上传">
+					<img id="img1"  src="" />
+					<input id="url" type="hidden" value="" name="idImg"/> -->
+
+					<!-- <img id="img1"  src="" class="center_sec_img2_shezhi_renzheng_p5_img"/> -->
+					<!-- <img src="../img/rz_pic.jpg"  class="center_sec_img2_shezhi_renzheng_p5_img" /> -->
+					<!-- <strong class="center_sec_img2_shezhi_renzheng_p5_p">请上传面部清晰的手持身份证照片</strong> -->
+					<input type="file" id="file1" name="file" />
+					
+					<img id="img1"  src="" class=""  style="display:none;"/>
+					<!-- <input type="text" class="center_sec_img2_shezhi_renzheng_p5_ipt1"> -->
+					<input id="upd" type="button"  class="center_sec_img2_shezhi_renzheng_p5_ipt2" value="上传">
+					<input id="url" type="hidden" value="" name="idImg"/>
+
+				</p>
+				<p class="center_sec_img2_shezhi_renzheng_p6"><span>家庭住址</span><input id="address" type="text" class="center_sec_img2_shezhi_renzheng_p6_ipt" name="address"></p>
+				<p class="center_sec_img2_shezhi_renzheng_p6 center_sec_img2_shezhi_renzheng_p7"><span>工作单位</span><input id="addressWork" type="text" class="center_sec_img2_shezhi_renzheng_p7_ipt" name="addressWork"></p>
+				<p class="center_sec_img2_shezhi_renzheng_p8"><span>绑定银行卡</span>
+
+					<input type="radio" class="center_sec_img2_shezhi_renzheng_p8_ipt1" name="bankType" value="建设银行"/><strong>建设银行</strong>
+					<input type="radio" class="center_sec_img2_shezhi_renzheng_p8_ipt2" name="bankType" value="工商银行"/><strong>工商银行</strong>
+					<input type="radio" class="center_sec_img2_shezhi_renzheng_p8_ipt3" name="bankType" value="中国银行"/><strong>中国银行</strong>
+
+				</p>
+				<p class="center_sec_img2_shezhi_renzheng_p6 center_sec_img2_shezhi_renzheng_p9"><span>银行卡号</span><input id="bankNumber" type="text" class="center_sec_img2_shezhi_renzheng_p9_ipt" name="bankNumber"></p>
+				<p class="center_sec_img2_shezhi_renzheng_p10"><input type="submit" class="center_sec_img2_shezhi_renzheng_p10_btn" value="确认提交"></p>
+				</form>
+			</div>
+			
+		</div>
+		
+
+		
+		<div id="footer_bg">
+			<div id="bottom-wrap">
+				<div class="bottom">
+					<h2>关注我们</h2>
+					<p>
+						<a href="#" class="bottom_p1"><img src="../img/bottom1.jpg"/></a>
+						<a href="#"><img src="../img/bottom2.png"/></a>
+					</p>
+				</div>
+			</div>
+			
+			<div id="footer-wrap">
+			
+				<footer>
+					<div class="f1">
+						<p>郑州市金水区</p>
+						<p>13689098767</p>
+					</div>
+					
+					<div class="f1">
+						<p>3C认证</p>
+						<p>大平台实力保证</p>
+					</div>
+					
+					<div class="f1">
+						<p>备案号：豫ICP备15043749号-1</p>
+						<p>2017微时贷人人行科技股份有限公司</p>
+					</div>
+					
+				</footer>
+				
+			</div>
+		</div>
+		</div>
+		<div id="clear2">
+		</div>
+		<script type="text/javascript">
+		var randomCode = "";
+		$(function(){
+			
+		/* 	$("#message1").validate({
+				rules:{
+						
+					telePhone:{
+						required:true,
+						number:true,
+						equalTo:${user.telePhone},
+						minlength:11,
+						maxlength:11
+					},
+					
+					
+				
+					
+			},
+			messages:{
+				realName:"请输入你的姓名",
+				
+				idNumber:{
+					required:"请输入证件号码",
+					number:"证件号码必须是数字",
+					minlength:"请输入18位数字",
+					maxlength:"请输入18位数字"
+				},
+				
+				telePhone:{
+					required:"请输入电话号码",
+					number:"电话号码必须是数字",
+					minlength:"请输入11位数字",
+					maxlength:"请输入11位数字"
+				},
+				address:"请输入地址",
+				
+				addressWork:"请输入地址",
+				
+				bankNumber:{
+					required:"银行卡号不能为空",
+					number:"请输入合法的银行卡号",
+					minlength:"请输入19位数字",
+					maxlength:"请输入19位数字"
+				}
+				
+			}
+			}); */
+			
+			
+			 
+			 $("#upd").click(function () {
+                ajaxFileUpload();
+            }) 
+          
+            
+            $("#perfact").validate({
+				submitHandler : function(){
+					$.ajax({
+						type:"post",
+						url:"perfact.action",
+						data:$("#perfact").serialize(),
+						dataType:"json",
+						success:function(data){
+							
+							if (data.code == 0) {
+								alert(data.msg);
+							} else {
+								alert("完善信息成功");
+							}
+							
+						}
+						
+						
+					});
+					
+					
+				},
+				
+				rules:{
+					realName:"required",
+					idNumber:{
+						required:true,
+						number:true,
+						minlength:18,
+						maxlength:18
+					},
+					
+					telePhone:{
+						required:true,
+						number:true,
+						minlength:11,
+						maxlength:11
+					},
+					address:"required",
+					
+					addressWork:"required",
+					
+					bankNumber:{
+						required:true,
+						number:true,
+						minlength:19,
+						maxlength:19
+					}
+					
+			},
+			messages:{
+				realName:"请输入你的姓名",
+				
+				idNumber:{
+					required:"请输入证件号码",
+					number:"证件号码必须是数字",
+					minlength:"请输入18位数字",
+					maxlength:"请输入18位数字"
+				},
+				
+				telePhone:{
+					required:"请输入电话号码",
+					number:"电话号码必须是数字",
+					minlength:"请输入11位数字",
+					maxlength:"请输入11位数字"
+				},
+				address:"请输入地址",
+				
+				addressWork:"请输入地址",
+				
+				bankNumber:{
+					required:"银行卡号不能为空",
+					number:"请输入合法的银行卡号",
+					minlength:"请输入19位数字",
+					maxlength:"请输入19位数字"
+				}
+				
+			}
+				
+				
+			});
+			
+			$.ajax({
+				type:"post",
+				url:"myBankCard.action",
+				dataType:"json",
+				success:function(data){
+					var telePhone = data.msg.telePhone;
+					
+					if (data.code == 1) {
+						$("#tel1").val(telePhone);
+					} 
+					
+				}});
+			
+			
+			
+			
+            });
+		
+            
+         function ajaxFileUpload() {
+        	 
+         
+             $.ajaxFileUpload({
+                    url: "upload.action", //用于文件上传的服务器端请求地址
+                    secureuri: false, //是否需要安全协议，一般设置为false
+                    fileElementId: 'file1', //文件上传域的ID
+                    dataType: 'json', //返回值类型 一般设置为json
+                    success: function (data, status)  //服务器成功响应处理函数
+                    {
+                    	
+                    	if (data.code == 0) {
+                    		alert(data.msg);
+                    	} else {
+                    		
+                    	var d = data.msg;
+                    	
+                        $("#img1").attr("src", d);
+                        $("#img1").attr("class", "center_sec_img2_shezhi_renzheng_p5_img");
+                        $("#img1").attr("style", "display:block");                      
+                        $("#url").attr("value",d);
+                    	}
+                    },
+                    error: function (data, status, e)//服务器响应失败处理函数
+                    {
+                        alert(e);
+                    }
+                }
+            );
+            
+           /*  alert(1);
+        	 var form = $("form[name=file]"); 
+        	 var options = {  
+        	 url:'upload', //上传文件的路径  
+        	 type:'post',
+        	 success:function(data){  
+        	  console.log(data); 
+        	  if (data.code == 0) {
+          		alert(data.msg);
+          	} else {
+          		
+          	var d = data.msg;
+          	
+              $("#img1").attr("src", d);
+              $("#img1").attr("class", "center_sec_img2_shezhi_renzheng_p5_img");
+              $("#img1").attr("style", "display:block");                      
+              $("#url").attr("value",d);
+        	  }
+        	 };  
+        	 form.ajaxSubmit(options); */
+        	 return false; 
+        }
+		   
+        	 //绑定银行卡
+        	 function toBinDing(){
+        		//$("#bankCard").html("1111");       			
+        		$.ajax({
+        			type:"post",
+        			url:"myBankCard",
+        			dataType:"json",
+        			success:function(data) {
+        				if (data.code == 1) {
+        					var bankCard = data.msg.bankNumber;
+        				
+        					$("#bankCard").html(bankCard); 
+        				}
+        				
+        			}
+        		
+        			}); 
+        		
+        		
+        	 }
+        	 
+        	 
+        	  function getCode() {
+        		  
+        		  
+        		  for (var i = 0; i < 5; i++) {
+        			  randomCode += Math.floor(Math.random()*10);
+        		  }
+        		     // alert(randomCode); 			
+         	 	$.ajax({
+         			type:"post",
+         			url:"getCode.action",
+         			data:{"telePhone":$("#tel1").val(),"randomCode":randomCode},
+         			dataType:"json",
+         			success:function(data) {
+         				if (data.code == 1) {
+         					var bankCard = data.msg.bankNumber;
+         				
+         					$("#bankCard").html(bankCard); 
+         				}
+         				
+         			}
+         		
+         			});  
+        	  
+        	 } 
+        	  
+        	 //验证验证码 
+        	function  confirmPass(){
+        		 var c = $("#userCode").val();
+        		 if (c == randomCode) {
+        			 $.ajax({
+              			type:"post",
+              			url:"updatePassword.action",
+              			data:{"newPass":$("#newPass").val()},
+              			dataType:"json",
+              			success:function(data) {
+              				if (data.code == 1) {
+              					alert("修改密码成功");
+              					window.location.href="/LoansBank/weiTime/html/center.html";
+              				}
+              				
+              			}
+              		
+              			}); 
+        		 } else {
+        			 alert("验证码不正确，请重新获取");
+        		 }
+        	 }
+        	 
+        	 function recharge() {
+        		 alert(1);
+        	 
+        		$.ajax({
+              			type:"post",
+              			url:"recharge.action",
+              			data:$("#pM").serialize(),
+              			dataType:"json",
+              			success:function(data) {
+              			
+              				var b = JSON.stringify(data);
+              				alert(b);
+              				var c = b.substring(b.indexOf("<form"),b.indexOf("/script>")+8);
+              				//var d = c.replaceAll("\\","");
+              				var d = c.replace(/\\/g, ""); 
+              				alert(d);
+              				//var p1 = /\"/g;
+              				// var d = b.replace(p1,"");
+              				$("#clear").text("");
+              				//$("#clear").innerHtml(d);
+              				$("#clear").append(d);
+              				//alert(d);
+              			}
+              		
+              			
+        			
+        		
+        			})	 
+        		
+        	 
+        	 }
+        	 
+		</script>
+		
+		
+		
+	</body>
+</html>

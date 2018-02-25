@@ -1,0 +1,175 @@
+
+html {
+    font-size: 50px;
+}
+
+html,
+body,
+ul,
+li,
+ol,
+dl,
+dd,
+dt,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+legend,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+img {
+    display: block;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+body {
+    color: #333;
+    font: 12px/20px "SimSun", "微软雅黑", "Arial", HELVETICA;
+    background: #fff;
+    /* overflow-y:scroll;*/
+    overflow-x: hidden;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+.transition {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+}
+
+
+
+
+/*----------------section-----------------*/
+#about_sec_wrap{
+	width: 100%;
+	height: 699px;
+	background: #111c3a;
+	overflow: hidden;
+}
+#about_sec{
+	width: 1200px;
+	height: 800px;
+	margin: 10px auto;
+/*	background: tan;*/
+}
+
+.about_item_1{
+	background: #fff;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.about_item_1 h2{
+	text-align: center;
+	margin-top: 38px;
+	font: 22px/24px  "微软雅黑";
+}
+.about_item_1 img{
+	display: block;
+	width: 144px;
+	margin: 10px auto;
+}
+.about_item_1 p{
+	width: 590px;
+	margin: auto;
+	font: 18px/32px  "微软雅黑";
+	text-indent: 30px;
+}
+
+
+
+.about_item_2{
+	background: #97cdf1;
+	/*position: relative;*/
+	overflow: hidden;
+	z-index: 3;
+}
+.about_item_2 img{
+	width: 250px;
+	height: 90px;
+	display: block;
+	margin: 34px  auto 25px;
+}
+.about_item_2 p{
+	width: 510px;
+	font: 18px/30px  "微软雅黑";
+	padding-left:14px ;
+	background: url(../img/about_bg.jpg) no-repeat left 10px;
+	/*text-indent: 36px;*/
+	list-style: circle;
+	margin: 10px auto;
+}
+
+
+
+
+.about_item_3{
+	
+	background: #fdae5f;
+	display: flex;
+	justify-content: space-around;
+	padding: 0 40px;
+	box-sizing: border-box;
+}
+.about_item_3 figure{
+	margin-top: 90px;
+}
+.about_item_3_img{
+	border-radius: 50%;
+	width: 131px;
+	height: 131px;
+	overflow: hidden;
+}
+.about_item_3_img img{
+	width: 131px;
+	height: 131px;
+}
+.about_item_3 figcaption{
+	text-align: center;
+	margin-top: 10px;
+	font: 20px/24px  "微软雅黑";
+}
+
+
+
+
+
+
+
+
+
